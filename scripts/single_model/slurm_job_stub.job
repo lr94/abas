@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#SBATCH --job-name=baseline
+#SBATCH --gres=gpu:1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=45GB
+#SBATCH --time=06:00:00
+#SBATCH --nodes=1-1
+
+# Activate env (change this according to your needs)
+source "$HOME/.local/env/bin/activate"
+
+./train_model.py \
+  --gpu 0 \
+  --load-workers $((SLURM_CPUS_PER_TASK / 2)) \
+  --no-tqdm \
+  $@

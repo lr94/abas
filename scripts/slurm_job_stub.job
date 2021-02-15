@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+#SBATCH --array 1-8
+#SBATCH --job-name=abas
+#SBATCH --gres=gpu:1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=45GB
+#SBATCH --nodes=1-1
+#SBATCH --time=20:00:00
+
+# Activate env (change this according to your needs)
+source "$HOME/.local/env/bin/activate"
+
+# Network interface of your nodes, to be used for communication between master and workers
+# In this it is an Infiniband interface. Change it to eth0, eth1, ib1, or whatever
+NETWORK_INTERFACE=ib0
+
+# If this is the first task of the array
+if [ "$SLURM_ARRAY_TASK_ID" == "1" ] && [ -z "$HEADLESS" ]; then
+  # Start the master
+  ./abas.py \
+    --no-tqdm \
+    --num-workers 1 \
+    --nic-name "$NETWORK_INTERFACE" \
+    --master \
+    $@ > "${SLURM_JOB_NAME}_${SLURM_JOB_ID}_master.log" &
+fi
+
+# Wait a bit more to be sure the master is ready and running
+sleep 10
+
+# Ready to go!
+./abas.py \
+  --gpu 0 \
+  --load-workers $((SLURM_CPUS_PER_TASK / 2)) \
+  --no-tqdm \
+  --num-workers $((SLURM_ARRAY_TASK_MAX - SLURM_ARRAY_TASK_MIN + 1)) \
+  --nic-name "$NETWORK_INTERFACE" \
+  --worker \
+  $@
+
+# Wait for the master to exit
+wait

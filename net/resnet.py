@@ -51,7 +51,7 @@ class ResNetFc(nn.Module):
             # 3
             self.layer3,
             # 4
-            self.layer4,  # <- Transformer!
+            self.layer4,
             # 5
             nn.Sequential(
                 self.avgpool,

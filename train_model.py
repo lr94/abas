@@ -154,9 +154,9 @@ def run_training(
         prepare_datasets(source, target, dataset_root)
 
     dload_src_train = DataLoader(dset_src_train, batch_size=bs, shuffle=True, num_workers=load_workers, drop_last=True)
-    dload_src_test = DataLoader(dset_src_test, batch_size=bs, shuffle=True, num_workers=load_workers)
+    dload_src_test = DataLoader(dset_src_test, batch_size=bs, shuffle=False, num_workers=load_workers)
     dload_trg_train = DataLoader(dset_trg_train, batch_size=bs, shuffle=True, num_workers=load_workers, drop_last=True)
-    dload_trg_test = DataLoader(dset_trg_test, batch_size=bs, shuffle=True, num_workers=load_workers)
+    dload_trg_test = DataLoader(dset_trg_test, batch_size=bs, shuffle=False, num_workers=load_workers)
 
     print(f"Source samples: {len(dset_src_train)}")
     print(f"Target samples: {len(dset_trg_train)}")

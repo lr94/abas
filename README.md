@@ -1,4 +1,4 @@
-![ABAS](https://github.com/lr94/abas/blob/master/abas.png)
+![ABAS](https://github.com/lr94/abas/blob/master/abas.png?newteaser)
 
 # ABAS
 
@@ -68,7 +68,7 @@ You can test a specific configuration with
 ### Contributors
 
 * Luca Robbiano <luca.robbiano@polito.it>
-* Muhammad Rameez Ur Rahman
+* Muhammad Rameez Ur Rahman <rahman@di.uniroma1.it>
 * Fabio Maria Carlucci
 
 ### License

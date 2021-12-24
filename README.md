@@ -21,7 +21,7 @@ If you use this code or the attached files for research purposes, please cite
 * Python 3.6 or newer
 * PyTorch 1.6 or newer
 * Other Python libraries listed in `requirements.txt`
-  
+
 ### Hardware requirements
 * 10 GB available on each GPU
 * Optional but strongly recommended: a cluster capable of running at least 8 parallel GPU jobs
@@ -67,7 +67,7 @@ You can test a specific configuration with
 
 ### Contributors
 
-* Luca Robbiano <luca.robbiano@iit.it>
+* Luca Robbiano <luca.robbiano@polito.it>
 * Muhammad Rameez Ur Rahman
 * Fabio Maria Carlucci
 

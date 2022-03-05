@@ -6,13 +6,15 @@ Code release for **[Adversarial Branch Architecture Search for Unsupervised Doma
 
 If you use this code or the attached files for research purposes, please cite
 ```
-@misc{robbiano2021adversarial,
-      title={Adversarial Branch Architecture Search for Unsupervised Domain Adaptation}, 
-      author={Luca Robbiano and Muhammad Rameez Ur Rahman and Fabio Galasso and Barbara Caputo and Fabio Maria Carlucci},
-      year={2021},
-      eprint={2102.06679},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@inproceedings{robbiano2021adversarial,
+	title        = {Adversarial Branch Architecture Search for Unsupervised Domain Adaptation},
+	author       = {Robbiano, Luca and Ur Rahman, Muhammad Rameez and Galasso, Fabio and Caputo, Barbara and Carlucci, Fabio Maria},
+	year         = 2022,
+	booktitle    = {2022 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+	volume       = {},
+	number       = {},
+	pages        = {1008--1018},
+	doi          = {10.1109/WACV51458.2022.00108}
 }
 ```
 
